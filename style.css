@@ -1,0 +1,12 @@
+* { padding: 0; box-sizing: border-box; margin: 0; }
+
+main { width: 100vw; height: 50vh; background-color: #ffff00; }
+main h2 { color: #ff0000; }
+main p { font-size: 30px; color: aqua; }
+
+.box { color: green; }
+.box .box__content { color: orange; }
+.box:hover { color: blue; }
+.box .box1, .box .box2 { color: aqua; }
+
+/*# sourceMappingURL=style.css.map */

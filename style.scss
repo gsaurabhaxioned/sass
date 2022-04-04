@@ -1,0 +1,40 @@
+@import "./resets";
+@import "./variables";
+main {
+    width: 100vw;
+    height: 50vh;
+    background-color: #ffff00;
+
+    h2 {
+        color: #ff0000;
+    }
+
+    p {
+        // font-size: map-get($font-size , small );
+        // font-size: map-get($font-size , medium );
+        font-size: map-get($font-size , large );
+        color: aqua;
+    }
+
+}
+
+
+.box {
+    color: green;
+    
+    #{&}__content {
+        color: orange;
+    }
+
+    &:hover {
+      color: blue;  
+    }
+
+    .box1 {
+        color: aqua;
+    }
+
+    .box2 {
+        @extend .box1;
+    }
+}

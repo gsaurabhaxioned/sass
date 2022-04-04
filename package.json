@@ -1,0 +1,19 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "Learn Sass",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass style.scss style.css -w"
+  },
+  "keywords": [
+    "sass",
+    "learn",
+    "sass"
+  ],
+  "author": "Saurabh Gaonkar",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
