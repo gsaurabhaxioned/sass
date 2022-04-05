@@ -1,12 +1,85 @@
-* { padding: 0; box-sizing: border-box; margin: 0; }
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0; }
 
-main { width: 100vw; height: 50vh; background-color: #ffff00; }
-main h2 { color: #ff0000; }
-main p { font-size: 30px; color: aqua; }
+main {
+  width: 100vw;
+  height: 50vh;
+  background-color: rgba(173, 48, 72, 0.6); }
+  main h2 {
+    color: #ff0000;
+    font-family: "Sans Serif"; }
+  main p {
+    font-size: 30px;
+    color: aqua; }
 
-.box { color: green; }
-.box .box__content { color: orange; }
-.box:hover { color: blue; }
-.box .box1, .box .box2 { color: aqua; }
+.box {
+  color: green; }
+  .box .box__content {
+    color: green; }
+  .box:hover {
+    color: blue; }
+  .box1, .box2 {
+    padding: 10px;
+    color: aqua;
+    border: 2px solid green;
+    border-radius: 12px; }
+  .box2 {
+    border: 2px solid green;
+    border-radius: 8px; }
+  .placeholder {
+    color: brown;
+    font-size: 30px; }
+
+.box-red, .box-blue {
+  width: 500px;
+  background-color: red;
+  display: block; }
+
+.box-blue {
+  width: 333.33333px;
+  background-color: blue; }
+
+li {
+  background-color: red;
+  color: #fff; }
+
+.list-1 {
+  width: 100px; }
+
+.list-2 {
+  width: 200px; }
+
+.list-3 {
+  width: 300px; }
+
+.normal {
+  font-weight: 10px; }
+
+.bold {
+  font-weight: 20px; }
+
+.bolder {
+  font-weight: 30px; }
+
+.padding-10 {
+  padding: 10; }
+
+.padding-20 {
+  padding: 20; }
+
+.padding-30 {
+  padding: 30; }
+
+.padding-40 {
+  padding: 40; }
+
+.padding-50 {
+  padding: 50; }
+
+@media print {
+  main {
+    background-color: violet; } }
 
 /*# sourceMappingURL=style.css.map */

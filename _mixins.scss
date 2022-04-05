@@ -1,0 +1,9 @@
+@mixin bd-radius($wd,$st,$clr,$rd) {
+    @if type-of($st) == "number" {
+        @warn "style rule cant be a number";
+    }
+
+    @debug "width is #{$wd}";
+    border: $wd $st $clr;
+    border-radius: $rd;
+}

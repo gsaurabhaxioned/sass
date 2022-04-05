@@ -1,18 +1,40 @@
 @import "./resets";
 @import "./variables";
+@import "./mixins";
+@import "./functions";
+// @use "fontweight";
+
+
 main {
     width: 100vw;
     height: 50vh;
-    background-color: #ffff00;
+    // background-color: #ffff00;
+    // background-color: darken($color: $base-color, $amount: 70);
+    // background-color: lighten($color: $base-color, $amount: 50);
+    // background-color: adjust-hue($color: $base-color, $degrees: 50);
+    // background-color: saturate($color: $base-color, $amount: 50); provide brightness
+    // background-color: desaturate($color: $base-color, $amount: 50); decrease brightness
+    // background-color: mix($base-color,#fff,50);
+    // some other functions:red,green,blue,hue,lightness,alpha
+    background-color: transparentize($color: $base-color, $amount: 0.4);
 
     h2 {
         color: #ff0000;
+        // font-family: quote($string: Arial);
+        // font-family: unquote($string: "Arial");
+        // font-family: to-upper-case($string: "Arial");
+        // font-family: to-lower-case($string: "Arial");
+        // font-family: str-length($string: "Arial");
+        // font-family: str-index($string: "Arial", $substring: "i");
+        font-family: str-insert($string: "Serif", $insert: "Sans ", $index:0 );
+        // font-family: str-slice("Sans Serif",6,8);
+        // font-family: unique-id();
     }
 
     p {
         // font-size: map-get($font-size , small );
         // font-size: map-get($font-size , medium );
-        font-size: map-get($font-size , large );
+        font-size: map-get($font-size, large);
         color: aqua;
     }
 
@@ -21,20 +43,93 @@ main {
 
 .box {
     color: green;
-    
+
     #{&}__content {
-        color: orange;
+        @if $test <=5 {
+            color: red;
+        }
+
+        @else if $test > 5 and $test <=20 {
+            color: green;
+        }
+
+        @else {
+            color: blue;
+        }
     }
 
     &:hover {
-      color: blue;  
+        color: blue;
     }
 
-    .box1 {
+    @at-root .box1 {
+        padding: 10px;
         color: aqua;
+        @include bd-radius(2px, solid, green, 12px);
     }
 
-    .box2 {
+    @at-root .box2 {
         @extend .box1;
+        @include bd-radius(2px, solid, green, 8px);
+    }
+
+    @at-root %placeholder_class {
+        color: brown;
+        font-size: 30px;
+    }
+
+    @at-root .placeholder {
+        @extend %placeholder_class;
+    }
+}
+
+.box-red {
+    width: half($container-width);
+    background-color: red;
+    display: block;
+}
+
+.box-blue {
+    width: one-third($container-width);
+    background-color: blue;
+    @extend .box-red;
+}
+
+ul {
+    @at-root
+    li {
+        background-color: red;
+        color: #fff;
+    }
+}
+//we can use to also but it will not count last number
+@for $i from 1 through 3 {
+    .list-#{$i} {
+        width: 100 * $i +px;
+    }
+}
+
+// @each is for list or map only 
+@each $i,$i-size in (normal:10px,bold:20px,bolder:30px) {
+    .#{$i} {
+        font-weight: $i-size;
+    }
+}
+
+//while 
+@while $num <= 50 {
+    .padding-#{$num} {
+        padding: $num;
+    }
+    $num:$num+10;
+}
+
+@media print {
+    main {
+        background-color: violet;
+
+        // @at-root (without: media) {
+        //     color: #111;
+        //   }      
     }
 }
